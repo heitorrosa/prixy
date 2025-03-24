@@ -1,4 +1,4 @@
-# bogota
+# Prixy
 Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda e compra de produtos utilizando metodologias como P2P para venda e compra de produtos.
 
 ## Features
