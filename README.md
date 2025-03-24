@@ -14,3 +14,6 @@ Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda 
 
 ## Tecnologias
 ![Tecnologias](https://go-skill-icons.vercel.app/api/icons?i=html,css,scss,js,bootstrap,nodejs,jquery,socketio,mysql,php,docker,)
+
+
+Commit Flow baseado em [iuricode/padroes-de-commits](https://github.com/iuricode/padroes-de-commits)
