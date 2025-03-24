@@ -1,5 +1,5 @@
 # bogota
-Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda e compra de produtos usados.
+Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda e compra de produtos usados utilizando metodologias como P2P para venda e compra de produtos.
 
 ## Features
 - Página de Login e Registro gerenciada pelo MySQL e com possíbilidade de login via uma conta Google.
