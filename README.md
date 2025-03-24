@@ -12,8 +12,9 @@ Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda 
 - Compartimentalização para Docker no back-end.
 - Uso do Github Pages para hostear o front-end.
 
+[Design Conceitual](https://www.figma.com/design/7iFSpgwhdyTX7XCcWytnzJ/prixy?node-id=0-1&t=pCZ5XEfGwDbFng8E-1)
+
 ## Tecnologias
 ![Tecnologias](https://go-skill-icons.vercel.app/api/icons?i=html,css,js,bootstrap,nodejs,react,socketio,mysql,php,docker,)
-
 
 Commit Flow baseado em [iuricode/padroes-de-commits](https://github.com/iuricode/padroes-de-commits)
