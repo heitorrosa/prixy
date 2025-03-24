@@ -12,4 +12,4 @@ Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda 
 - Compartimentalização para Docker no back-end
 
 ## Tecnologias
-![Tecnologias](https://go-skill-icons.vercel.app/api/icons?i=html,css,js,bootstrap,nodejs,jquery,socketio,mysql,php)
+![Tecnologias](https://go-skill-icons.vercel.app/api/icons?i=html,css,scss,js,bootstrap,nodejs,jquery,socketio,mysql,php)
