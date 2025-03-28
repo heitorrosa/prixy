@@ -1,14 +1,17 @@
 const express = require("express");
 const mySQL = require("mysql");
+const dotenv = require("dotenv").config();
+
+dotenv.config({ path: "./.env" });
 
 const prixy = express();
 
 // Configura a conexão com o banco de dados MySQL (XAMPP)
 const bancoDados = mySQL.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "sistemalogin-nodejs"
+    host: process.env.DATABASE_HOST,
+    user: process.env.DATABASE_USUARIO,
+    password: process.env.DATABASE_SENHA,
+    database: process.env.DATABASE
 });
 
 // Conecta ao banco de dados MySQL (XAMPP)
