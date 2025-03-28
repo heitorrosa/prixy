@@ -1,6 +1,6 @@
 const express = require("express");
 const mySQL = require("mysql");
-const dotenv = require("dotenv").config();
+const dotenv = require("dotenv");
 
 dotenv.config({ path: "./.env" });
 
