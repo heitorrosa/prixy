@@ -9,8 +9,7 @@ Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda 
 - Página para gerenciamento de conta (Trocar foto de perfil, senha, nome em display e apagar a conta).
 - Página para venda de um produto (nome, descrição, preço e até 3 fotos dele).
 - Ambiente de chat em Web Sockets feito com Socket.IO para conversa entre vendedor e comprador com possibilidade de oferta para preço exclusivo do comprador.
-- Compartimentalização para Docker no back-end.
-- Uso do Github Pages para hostear o front-end.
+- Compartimentalização para Docker.
 
 <br>
 
