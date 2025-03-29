@@ -1,0 +1,18 @@
+html, head, body {
+    background-color: #31363f;
+    color: #eee;
+    font-family: awesome-font;
+}
+
+#barraNavegacao {
+
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}

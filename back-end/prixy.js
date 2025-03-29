@@ -27,11 +27,12 @@ bancoDados.connect((err) => {
 // Configura um diretório público para servir arquivos estáticoss
 const diretorioPublico = path.join(__dirname, '../front-end');
 prixy.use(express.static(diretorioPublico));
+
 prixy.set('views', path.join(__dirname, '../front-end'));
 
 prixy.get("/", (req, res) => {
     // res.send("<a>Sucesso!</a>")
-    res.render("../front-end/pages/preLogin/login/login.hbs");
+    res.render("../front-end/dashboard.hbs");
 })
 
 prixy.listen(5000, () => {
