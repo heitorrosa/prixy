@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const mySQL = require("mysql");
 const dotenv = require("dotenv");
 
@@ -23,9 +24,14 @@ bancoDados.connect((err) => {
     console.log("Conexão com o banco de dados estabelecida com sucesso!");
 });
 
+// Configura um diretório público para servir arquivos estáticoss
+const diretorioPublico = path.join(__dirname, '../front-end');
+prixy.use(express.static(diretorioPublico));
+prixy.set('views', path.join(__dirname, '../front-end'));
 
 prixy.get("/", (req, res) => {
-    res.send("<a>Sucesso!</a>")
+    // res.send("<a>Sucesso!</a>")
+    res.render("../front-end/pages/preLogin/
 })
 
 prixy.listen(5000, () => {
