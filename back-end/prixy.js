@@ -31,7 +31,7 @@ prixy.set('views', path.join(__dirname, '../front-end'));
 
 prixy.get("/", (req, res) => {
     // res.send("<a>Sucesso!</a>")
-    res.render("../front-end/pages/preLogin/
+    res.render("../front-end/pages/preLogin/login/login.hbs");
 })
 
 prixy.listen(5000, () => {
