@@ -33,13 +33,9 @@ console.log(`Diretório público: ${diretorioPublico}`);
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/frontend'));
 
-app.get('/', (req, res) => {
-  res.render("dashboard.hbs");
-});
+// Configura rotas para facilitar a navegação entre as páginas do Website e a organização do código
+app.use('/', require('./frontend/rota'));
 
-app.get('/registrar', (req, res) => {
-  res.render("registrar/registrar.hbs");
-});
 
 app.listen(8080, () => {
   console.log('O servidor está rodando na porta 8080!');
