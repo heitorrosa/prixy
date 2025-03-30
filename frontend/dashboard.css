@@ -19,8 +19,6 @@ nav h2 {
     font-size: 23.6px;
     font-weight: bold;
     letter-spacing: 12px;
-
-    align: left;
 }
 
 
@@ -28,8 +26,6 @@ nav ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
-    align: right;
 }
 
 nav li {

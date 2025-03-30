@@ -37,6 +37,10 @@ app.get('/', (req, res) => {
   res.render("dashboard.hbs");
 });
 
+app.get('/registrar', (req, res) => {
+  res.render("registrar/registrar.hbs");
+});
+
 app.listen(8080, () => {
   console.log('O servidor está rodando na porta 8080!');
 });

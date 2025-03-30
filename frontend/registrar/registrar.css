@@ -1,0 +1,15 @@
+html,
+body,
+head {
+    background-color: #31363f;
+    font-family: 'Font-Awesome', sans-serif;
+}
+
+div #container {
+    background-color: #31363f;
+    color: #eee;
+    padding: 0px 30px;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+}
