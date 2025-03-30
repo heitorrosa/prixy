@@ -7,12 +7,12 @@ const app = express();
 
 dotenv.config({ path: './.env' });
 
-// Configura e conecta a aplição ao banco de dados MySQL (XAMPP)
+// Configura e conecta a aplição ao banco de dados MySQL
 const bancoDeDados = mysql.createConnection({
     host: process.env.BANCODADOS_HOST,
     user: process.env.BANCODADOS_USUARIO,
     password: process.env.BANCODADOS_SENHA,
-    database: process.env.BANCODADOS_SISTEMALOGIN
+    database: process.env.BANCODADOS
 });
 
 bancoDeDados.connect((erro) => {
