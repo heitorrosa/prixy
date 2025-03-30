@@ -1,0 +1,29 @@
+{
+  "name": "prixy",
+  "version": "1.0.0",
+  "description": "Uma plataforma de Marketplace similar a OLX e o Facebook Marketplace para venda e compra de produtos utilizando metodologias como P2P para venda e compra de produtos.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heitorrosa/prixy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heitorrosa/prixy/issues"
+  },
+  "homepage": "https://github.com/heitorrosa/prixy#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "hbs": "^4.2.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^3.1.9",
+    "socket.io": "^4.8.1"
+  }
+}
