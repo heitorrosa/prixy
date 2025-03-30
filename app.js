@@ -34,7 +34,8 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, '/frontend'));
 
 // Configura rotas para facilitar a navegação entre as páginas do Website e a organização do código
-app.use('/', require('./frontend/rota'));
+app.use('/', require('./rotas/paginas.js'));
+app.use('/autenticacao', require('./rotas/autenticacao.js'));
 
 
 app.listen(8080, () => {
