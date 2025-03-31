@@ -27,6 +27,11 @@ bancoDeDados.connect((erro) => {
 const diretorioPublico = path.join(__dirname, '/frontend');
 app.use(express.static(diretorioPublico));
 
+// Configura o middleware para processar dados de formulários e JSON
+// O middleware é um código que fica entre o pedido do cliente e a resposta do servidor
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 console.log(`Diretório público: ${diretorioPublico}`);
 
 
