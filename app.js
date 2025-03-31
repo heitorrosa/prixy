@@ -3,6 +3,10 @@ const mysql = require('mysql');
 const dotenv = require('dotenv');
 const path = require('path');
 
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
+
 const app = express();
 
 dotenv.config({ path: './.env' });
@@ -15,6 +19,9 @@ const bancoDeDados = mysql.createConnection({
     database: process.env.BANCODADOS
 });
 
+// Chyave secreta para o JWT
+const JWT_SECRET = process.env.JWT_SECRET;
+
 bancoDeDados.connect((erro) => {
     if (erro) {
         console.error('Erro ao conectar ao banco de dados: ', erro);
@@ -23,20 +30,39 @@ bancoDeDados.connect((erro) => {
     console.log('Conectado ao banco de dados MySQL!');
 });
 
-// Configura um diretório público para servir arquivos estáticoss
+// Configura um diretório público para servir arquivos estáticos e o Handlebars
 const diretorioPublico = path.join(__dirname, '/frontend');
 app.use(express.static(diretorioPublico));
+
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, '/frontend'));
 
 // Configura o middleware para processar dados de formulários e JSON
 // O middleware é um código que fica entre o pedido do cliente e a resposta do servidor
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 console.log(`Diretório público: ${diretorioPublico}`);
 
+// Middleware para verificar JWT
+const verificarJWT = (req, res, next) => {
+    const token = req.cookies.jwt;
+    if (token) {
+        jwt.verify(token, JWT_SECRET, (err, decodedToken) => {
+            if (err) {
+                res.redirect('/logar');
+            } else {
+                req.user = decodedToken;
+                next();
+            }
+        });
+    } else {
+        res.redirect('/logar');
+    }
+};
 
-app.set('view engine', 'hbs');
-app.set('views', path.join(__dirname, '/frontend'));
+module.exports = verificarJWT;
 
 // Configura rotas para facilitar a navegação entre as páginas do Website e a organização do código
 app.use('/', require('./rotas/paginas.js'));
