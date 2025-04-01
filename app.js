@@ -19,9 +19,6 @@ const bancoDeDados = mysql.createConnection({
     database: process.env.BANCODADOS
 });
 
-// Chyave secreta para o JWT
-const JWT_SECRET = process.env.JWT_SECRET;
-
 bancoDeDados.connect((erro) => {
     if (erro) {
         console.error('Erro ao conectar ao banco de dados: ', erro);

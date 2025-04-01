@@ -46,12 +46,20 @@ exports.registrar = (req, res) => {
                 return res.render('registrar/registrar.hbs', {
                     mensagem: 'Erro ao registrar o usuário!'
                 });
-            }
+            } else {
 
-            console.log('Usuário registrado com sucesso!');
-            return res.render('registrar/registrar.hbs', {
-                mensagem: 'Usuário registrado com sucesso!'
-            });
+                // Novo: Gerar JWT e fazer login automático
+                const token = jwt.sign({ id: resultado.insertId, nome: nome, email: email }, JWT_SECRET, {
+                    expiresIn: '1h'
+                });
+                res.cookie('jwt', token, { httpOnly: true, maxAge: 3600000 });
+                res.redirect('/'); // Redirecionar para a página inicial
+
+                console.log('Usuário registrado com sucesso!');
+                return res.render('registrar/registrar.hbs', {
+                    mensagem: 'Usuário registrado com sucesso!'
+                });
+            }
         });
     });
 }
@@ -67,7 +75,7 @@ exports.logar = (req, res) => {
             database: process.env.BANCODADOS
         });
 
-        // Chave secreta para o JWT
+        // Chave secreta para o JWT e middleware para o cookie
         const JWT_SECRET = process.env.JWT_SECRET;
 
         const { email, senha } = req.body;
