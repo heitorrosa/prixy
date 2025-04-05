@@ -38,6 +38,10 @@ paginas.get('/logar', (req, res) => {
   res.render("logar/logar.hbs");
 });
 
+paginas.get('/conta/gerenciar', (req, res) => {
+  res.render("gerenciamentoConta/gerenciamentoConta.hbs");
+});
+
 paginas.get('/logout', (req, res) => {
   res.clearCookie('jwt');
   res.redirect('/logar');

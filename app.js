@@ -63,7 +63,7 @@ module.exports = verificarJWT;
 
 // Configura rotas para facilitar a navegação entre as páginas do Website e a organização do código
 app.use('/', require('./rotas/paginas.js'));
-app.use('/autenticacao', require('./rotas/autenticacao.js'));
+app.use('/rotas', require('./rotas/rotas.js'));
 
 
 app.listen(8080, () => {
