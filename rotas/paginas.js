@@ -26,7 +26,7 @@ const verificarJWT = (req, res, next) => {
 const JWT_SECRET = process.env.JWT_SECRET;
 paginas.use(cookieParser());
 
-paginas.get('/', verificarJWT, (req, res) => {
+paginas.get('/', (req, res) => {
   res.render("dashboard.hbs");
 });
   
@@ -38,7 +38,7 @@ paginas.get('/logar', (req, res) => {
   res.render("logar/logar.hbs");
 });
 
-paginas.get('/conta/gerenciar', (req, res) => {
+paginas.get('/conta/gerenciar', verificarJWT, (req, res) => {
   res.render("gerenciamentoConta/gerenciamentoConta.hbs");
 });
 

@@ -9,4 +9,5 @@ rotas.post('/registrar', controladorAutenticacao.registrar);
 rotas.post('/logar', controladorAutenticacao.logar);
 
 rotas.post('/gerenciarConta', gerenciamentoConta.gerenciarConta);
+
 module.exports = rotas;
