@@ -21,5 +21,16 @@ exports.gerenciarConta = (req, res) => {
 
     const {nome, email, senha, confirmarSenha} = req.body;
 
-     
+     bancoDeDados.query('SELECT email FROM usuarios WHERE email = ?', [email], async (erro, resultado) => {
+        if (erro) {
+            console.error('Erro ao verificar o email: ', erro);
+        }
+
+        if(resultado.length > 0) {
+            return res.render('gerenciamentoConta/gerenciamentoConta.hbs', {
+                email: email
+            });
+        }
+
+    });
 }
