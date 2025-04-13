@@ -44,7 +44,7 @@ paginas.get('/conta/gerenciar', verificarJWT, (req, res) => {
 
 paginas.get('/logout', (req, res) => {
   res.clearCookie('jwt');
-  res.redirect('/logar');
+  res.redirect('/');
 });
 
 module.exports = paginas;

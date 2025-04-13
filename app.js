@@ -11,6 +11,8 @@ const app = express();
 
 dotenv.config({ path: './.env' });
 
+const PORTA = process.env.PORTA;
+
 // Configura e conecta a aplição ao banco de dados MySQL
 const bancoDeDados = mysql.createConnection({
     host: process.env.BANCODADOS_HOST,
@@ -42,30 +44,11 @@ app.use(cookieParser());
 
 console.log(`Diretório público: ${diretorioPublico}`);
 
-// Middleware para verificar JWT
-const verificarJWT = (req, res, next) => {
-    const token = req.cookies.jwt;
-    if (token) {
-        jwt.verify(token, JWT_SECRET, (err, decodedToken) => {
-            if (err) {
-                res.redirect('/logar');
-            } else {
-                req.user = decodedToken;
-                next();
-            }
-        });
-    } else {
-        res.redirect('/logar');
-    }
-};
-
-module.exports = verificarJWT;
-
 // Configura rotas para facilitar a navegação entre as páginas do Website e a organização do código
 app.use('/', require('./rotas/paginas.js'));
 app.use('/rotas', require('./rotas/rotas.js'));
 
 
-app.listen(8080, () => {
-  console.log('O servidor está rodando na porta 8080!');
+app.listen(PORTA, () => {
+  console.log('O servidor está rodando na porta', PORTA);
 });

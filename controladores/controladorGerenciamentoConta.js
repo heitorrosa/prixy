@@ -7,8 +7,7 @@ const cookieParser = require('cookie-parser');
 dotenv.config({ path: '../.env' });
 
 exports.gerenciarConta = (req, res) => {
-    console.log("Dados do gerenciamento de conta:", req.body);
-    // Configura e conecta a aplição ao banco de dados MySQL
+    // Configura e conecta a aplicação ao banco de dados MySQL
     const bancoDeDados = mysql.createConnection({
         host: process.env.BANCODADOS_HOST,
         user: process.env.BANCODADOS_USUARIO,
@@ -19,18 +18,5 @@ exports.gerenciarConta = (req, res) => {
     // Chave secreta para o JWT
     const JWT_SECRET = process.env.JWT_SECRET;
 
-    const {nome, email, senha, confirmarSenha} = req.body;
-
-     bancoDeDados.query('SELECT email FROM usuarios WHERE email = ?', [email], async (erro, resultado) => {
-        if (erro) {
-            console.error('Erro ao verificar o email: ', erro);
-        }
-
-        if (resultado.length > 0) {
-            return res.render('gerenciamentoConta/gerenciamentoConta.hbs', {
-                email: 'email'
-            });
-        }
-
-    });
-}
+    const {nome, email, senhaAtual, novaSenha, confirmarNovaSenha} = req.body;
+};

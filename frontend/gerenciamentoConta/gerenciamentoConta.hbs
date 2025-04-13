@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prixy - Gerenciamento de Conta</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<head>
 </head>
 <body>
     <div class="container mt-5">
@@ -16,35 +17,33 @@
         <form action="/rotas/gerenciarConta" method="POST">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <input type="text" class="form-control" id="nome" name="nome">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email">
             </div>
             <div class="mb-3">
                 <label for="localizacao" class="form-label">Localização</label>
-                <input type="text" class="form-control" id="localizacao" name="localizacao" required>
+                <input type="text" class="form-control" id="localizacao" name="localizacao">
             </div>
             <div class="mb-3">
-                <label for="senha" class="form-label">Senha</label>
-                <input type="password" class="form-control" id="senha" name="senha" required>
+                <label for="senhaAtual" class="form-label">Senha Atual</label>
+                <input type="text" class="form-control" id="senhaAtual" name="senhaAtual">
             </div>
             <div class="mb-3">
-                <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
-                <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" required>
+                <label for="novaSenha" class="form-label">Nova Senha</label>
+                <input type="password" class="form-control" id="novaSenha" name="novaSenha">
+            </div>
+            <div class="mb-3">
+                <label for="confirmarNovaSenha" class="form-label">Confirmar Senha</label>
+                <input type="password" class="form-control" id="confirmarNovaSenha" name="confirmarNovaSenha">
             </div>
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-save"></i> Salvar
             </button>
         </form>
     </div>
-
-    {{#if email}}
-        <div class="alert alert-danger mt-4" role="alert">
-            <h4>{{email}}</h4>
-        </div>
-    {{/if}}
 
 
     <!-- Bootstrap JS and Popper.js -->
