@@ -10,4 +10,6 @@ rotas.post('/logar', controladorAutenticacao.logar);
 
 rotas.post('/gerenciarConta', gerenciamentoConta.gerenciarConta);
 
+rotas.post('/visualizarDados', gerenciamentoConta.visualizarDados);
+
 module.exports = rotas;

@@ -29,9 +29,22 @@ exports.visualizarDados = (req, res) => {
             password: process.env.BANCODADOS_SENHA,
             database: process.env.BANCODADOS
         });
-    
+
         // Chave secreta para o JWT
         const JWT_SECRET = process.env.JWT_SECRET;
+
+    bancoDeDados.query('SELECT * FROM usuarios', (erro, resultado) => {
+        if (erro) {
+            console.error('Erro ao visualizar os dados: ', erro);
+            return res.render('gerenciamentoConta/gerenciamentoConta.hbs', {
+                mensagem: 'Erro ao visualizar os dados!'
+            });
+        } else {
+            console.log('Dados visualizados com sucesso!');
+            return res.render('gerenciamentoConta/gerenciamentoConta.hbs', {
+                dados: resultado
+            });
+        }
+    });
     
-        const {nome, email, senhaAtual, novaSenha, confirmarNovaSenha} = req.body;
 };

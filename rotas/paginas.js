@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 
 const paginas = express.Router();
 
-const gerenciamentoConta = require('../controladores/controladorGerenciamentoConta.js');
+const gerenConta = require('../controladores/controladorGerenciamentoConta.js');
 // Middleware para verificar JWT
 const verificarJWT = (req, res, next) => {
     const token = req.cookies.jwt;
@@ -39,7 +39,7 @@ paginas.get('/logar', (req, res) => {
   res.render("logar/logar.hbs");
 });
 
-paginas.get('/conta/gerenciar', verificarJWT, gerenciamentoConta.visualizarDados, (req, res) => {
+paginas.get('/conta/gerenciar', verificarJWT, (req, res) => {
   res.render("gerenciamentoConta/gerenciamentoConta.hbs");
 });
 
